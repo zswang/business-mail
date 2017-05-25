@@ -9,3 +9,7 @@
   color: #949412;
   cursor: pointer;
 }
+
+input[type="text"] {
+  width: 300px;
+}

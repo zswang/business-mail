@@ -22,7 +22,7 @@
     fieldList.forEach(function (key) {
       <div><label>#{key}</label><input :name="key" type="text" :placeholder="key" :value="fields[key]" @input="change(key, this.value);"></div>
     })
-    <input type="button" value="download" @click="download()">
+    <input type="button" value="下载邮件" @click="download()">
     </script>
   </form>
   <div id="mail">

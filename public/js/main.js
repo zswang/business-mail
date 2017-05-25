@@ -94,6 +94,8 @@
     var target = e.target;
     if (/\bdefault_text\b/.test(target.className)) {
       var element = document.querySelector('input[name="' + target.textContent + '"]');
+      e.stopPropagation();
+      e.preventDefault();
       element.focus();
     }
   })
