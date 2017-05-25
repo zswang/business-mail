@@ -70,7 +70,7 @@
     }
   });
 
-  penjs.Ajax.get('/list', function (err, reply) {
+  penjs.Ajax.get('list', function (err, reply) {
     if (err) {
       return;
     }
