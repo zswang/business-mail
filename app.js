@@ -56,6 +56,9 @@ app.post('/download', (req, res) => {
       replace(/<!--remove-->[^]*?<!--\/remove-->\s*/g, '').
       replace(/<span class="default_text"[^>]*>([\w\u4e00-\u9fa5\[\].:-]+)<\/span>/g, (all, name) => {
         return req.body[name] || ''
+      }).
+      replace(/\{\{([\w\u4e00-\u9fa5\[\].:-]+)\}\}/g, (all, name) => {
+        return req.body[name] || ''
       })
   }
 
@@ -72,8 +75,7 @@ app.post('/download', (req, res) => {
           res.end(500, err)
           return
       }
-
-      res.attachment('mail.eml')
+      res.attachment(path.basename(req.body['mail-name'], '.html') + '.eml')
       res.send(message)
   })
 })

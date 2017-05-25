@@ -43,7 +43,7 @@
     methods: {
       select: function (item) {
         this.selected = item;
-        mailData.selected = item.name;
+        mailData.selected = pmForm.selected = item.name;
         mailStorage.save(mailData);
 
         document.querySelector('#mail').innerHTML = mailReplace(item.html);
