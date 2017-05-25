@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title data-lang-content="<!--{en}Business mail-->">商务邮件</title>
+  <script src="//unpkg.com/penjs/penjs.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <ul id="list">
+    <span>加载中...</span>
+    <script type="text/jhtmls">
+    items.forEach(function (item) {
+      <li :depend="item" :class="{ selected: item === selected }">
+        <button @click="select(item)">#{item.name}</button>
+      </li>
+    })
+    </script>
+  </ul>
+  <form method="POST" action="/download">
+    <script type="text/jhtmls">
+    <input name="mail-name" :value="selected" type="hidden">
+    fieldList.forEach(function (key) {
+      <div><label>#{key}</label><input :name="key" type="text" :placeholder="key" :value="fields[key]" @input="change(key, this.value);"></div>
+    })
+    <input type="button" value="download" @click="download()">
+    </script>
+  </form>
+  <div id="mail">
+  </div>
+</body>
+<script src="js/main.js"></script>
+</html>

@@ -1,0 +1,11 @@
+.selected {
+  background: gray;
+}
+
+.default_text {
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: #f5edcd;
+  color: #949412;
+  cursor: pointer;
+}
