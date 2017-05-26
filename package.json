@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/.bin/babel-node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dist": "linenum app.js --output app-dist.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,10 @@
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "glob": "^7.1.2",
-    "nodemailer": "^4.0.1"
+    "nodemailer": "^4.0.1",
+    "rtconfig": "^0.1.8"
+  },
+  "devDependencies": {
+    "linenum": "^0.0.13"
   }
 }

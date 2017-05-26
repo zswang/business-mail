@@ -50,7 +50,7 @@ app.get('/list', (req, res) => {
 const MailComposer = require('nodemailer/lib/mail-composer/')
 
 app.post('/download', (req, res) => {
-  console.log('^linenum download %j', req.body)
+  console.log('app.js:53 download %j', req.body)
 
   let mailItem
   mails.some((item) => {
@@ -96,4 +96,4 @@ app.post('/download', (req, res) => {
 
 
 app.listen(port)
-console.log('^linenum server listen: %j', port)
+console.log('app.js:99 server listen: %j', port)

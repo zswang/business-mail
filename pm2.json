@@ -1,8 +1,11 @@
 {
-    "apps": [
-        {
-            "script": "app.js",
-            "name": "business-mail"
-        }
-    ]
+  "apps": [
+    {
+      "script": "app-dist.js",
+      "name": "business-mail",
+      "args": ["3000"],
+      "merge_logs": true,
+      "log_date_format": "YYYY-MM-DD HH:mm:ss"
+    }
+  ]
 }
