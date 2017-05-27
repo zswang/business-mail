@@ -83,6 +83,9 @@
         }
         return item;
       });
+      if (!selected) {
+        selected = pmList.items[0];
+      }
       pmList.selected = selected;
       if (selected) {
         document.querySelector('#mail').innerHTML = mailReplace(selected.html);

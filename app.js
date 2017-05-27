@@ -12,7 +12,7 @@ var mails
 var lastLoadTime = 0
 var port = parseInt(process.argv[2]) || 3000
 
-function loadMails() {
+function loadMails(callback) {
   if (Date.now() - lastLoadTime < config.scandelay) {
     return mails
   }
@@ -33,17 +33,19 @@ function loadMails() {
       })
       return item
     })
+    callback(err)
   })
-  return mails
 }
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/list', (req, res) => {
-  res.json({
-    status: 200,
-    data: loadMails()
+  loadMails((err) => {
+    res.json({
+      status: 200,
+      data: mails
+    })
   })
 })
 
